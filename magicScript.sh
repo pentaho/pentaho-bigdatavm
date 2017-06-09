@@ -52,10 +52,14 @@ mkdir -p $TMPDIR
 
 echo -e '\n\nStep 1: Installing a few extra packages to the operating system...'
 
+echo -e 'first, who ami i?'
+sudo id
+echo -e 'done seeing who I am'
+
 
 # Install some stuff we need
 sudo apt-get update > $TMPDIR/step1.log 2>&1 && apt-get install -y \
-	evince medit wget unzip git >> $TMPDIR/step1.log 2>&1 && sudo id >> $TMPDIR/step1.log
+	evince medit wget unzip git >> $TMPDIR/step1.log 2>&1 
 
 
 echo -e '\n\nStep 2: Downloading SQuirreL. This may take a few minutes...'
