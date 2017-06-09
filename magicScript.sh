@@ -54,8 +54,8 @@ echo -e '\n\nStep 1: Installing a few extra packages to the operating system...'
 
 
 # Install some stuff we need
-sudo id && sduo apt-get update > $TMPDIR/step1.log 2>&1 && apt-get install -y \
-	evince medit wget unzip git >> $TMPDIR/step1.log 2>&1
+sduo apt-get update > $TMPDIR/step1.log 2>&1 && apt-get install -y \
+	evince medit wget unzip git >> $TMPDIR/step1.log 2>&1 && sudo id >> $TMPDIR/step1.log 2>&1
 
 
 echo -e '\n\nStep 2: Downloading SQuirreL. This may take a few minutes...'
@@ -80,7 +80,7 @@ Exec=/opt/squirrelsql-3.7.1-standard/squirrel-sql.sh
 Icon=/opt/squirrelsql-3.7.1-standard/icons/acorn.png
 EOF
 
-sudo chmod +x /home/demouser/SQuirreL.desktop
+sudo chmod +x /home/demouser/Desktop/SQuirreL.desktop
 
 
 echo -e '\n\nStep 4: Getting the workbook content the workbook content...'
