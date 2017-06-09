@@ -58,7 +58,7 @@ echo -e 'done seeing who I am'
 
 
 # Install some stuff we need
-sudo apt-get update > $TMPDIR/step1.log 2>&1 && apt-get install -y \
+sudo apt-get update > $TMPDIR/step1.log 2>&1 && sudo apt-get install -y \
 	evince medit wget unzip git >> $TMPDIR/step1.log 2>&1 
 
 
