@@ -54,7 +54,7 @@ echo -e '\n\nStep 1: Installing a few extra packages to the operating system...'
 
 
 # Install some stuff we need
-sduo apt-get update > $TMPDIR/step1.log 2>&1 && apt-get install -y \
+sudo apt-get update > $TMPDIR/step1.log 2>&1 && apt-get install -y \
 	evince medit wget unzip git >> $TMPDIR/step1.log 2>&1 && sudo id >> $TMPDIR/step1.log 2>&1
 
 
