@@ -52,10 +52,6 @@ mkdir -p $TMPDIR
 
 echo -e '\n\nStep 1: Installing a few extra packages to the operating system...'
 
-echo -e 'first, who ami i?'
-sudo id
-echo -e 'done seeing who I am'
-
 
 # Install some stuff we need
 sudo apt-get update > $TMPDIR/step1.log 2>&1 && sudo apt-get install -y \
