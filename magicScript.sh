@@ -46,6 +46,11 @@ if [ -d $TMPDIR ]; then
 	rm -rf $TMPDIR
 fi
 
+# Is there another copy of this file already in place?  kill it!
+if [ -f $BASEDIR/magicScript.sh ]; then
+	rm -rf $BASEDIR/magicScript.sh
+fi
+
 # and start!
 mkdir -p $TMPDIR
 
