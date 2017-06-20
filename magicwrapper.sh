@@ -1,5 +1,7 @@
 #!/bin/bash
 
+## This file will pull down the magic script and execute it. 
+
 BASEDIR=$(dirname $0)
 # Is there another copy of this file already in place? kill it!
 if [ -f $BASEDIR/magicScript.sh ]; then
