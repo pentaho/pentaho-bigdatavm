@@ -37,7 +37,7 @@ TMPDIR=/home/demouser/magicScriptTmp/
 WORKBOOKDIR=/home/demouser
 
 WORKBOOK_GIT=https://github.com/pentaho/pentaho-bigdatavm.git
-WORKBOOK_DIRNAME=pentaho-bigdata.vm
+WORKBOOK_DIRNAME=pentaho-bigdatavm
 WORKBOOK_VERSION=master
 
 
