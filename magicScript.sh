@@ -54,7 +54,7 @@ echo -e '\n\nStep 1: Installing a few extra packages to the operating system...'
 
 
 # Install some stuff we need
-sudo apt-get update > $TMPDIR/step1.log 2>&1 && sudo apt-get install -y \
+#BOB sudo apt-get update > $TMPDIR/step1.log 2>&1 && sudo apt-get install -y \
 	evince medit wget unzip git >> $TMPDIR/step1.log 2>&1 
 
 
@@ -63,14 +63,14 @@ echo -e '\n\nStep 2: Downloading SQuirreL. This may take a few minutes...'
 
 # Download squirrel
 
-wget 'https://sourceforge.net/projects/squirrel-sql/files/1-stable/3.7.1-plainzip/squirrelsql-3.7.1-standard.zip/download' -O $TMPDIR/squirrelsql-3.7.1-standard.zip -o $TMPDIR/step2.log
+#BOB wget 'https://sourceforge.net/projects/squirrel-sql/files/1-stable/3.7.1-plainzip/squirrelsql-3.7.1-standard.zip/download' -O $TMPDIR/squirrelsql-3.7.1-standard.zip -o $TMPDIR/step2.log
 
 
 echo -e '\n\nStep 3: Installing and configuring SQuirreL...'
 
 # Install it
-sudo unzip -o $TMPDIR/squirrelsql-3.7.1-standard.zip -d /opt >> $TMPDIR/step3.log 2>&1
-sudo chmod +x /opt/squirrelsql-3.7.1-standard/*sh
+#BOB sudo unzip -o $TMPDIR/squirrelsql-3.7.1-standard.zip -d /opt >> $TMPDIR/step3.log 2>&1
+#BOB sudo chmod +x /opt/squirrelsql-3.7.1-standard/*sh
 
 cat << 'EOF' > /home/demouser/Desktop/SQuirreL.desktop
 [Desktop Entry]
@@ -103,11 +103,11 @@ fi
 
 sleep 10
 
-sudo rm -f /home/demouser/Desktop/Pentaho\ Evaluation
+#sudo rm -f /home/demouser/Desktop/Pentaho\ Evaluation
 
-sudo mv /home/demouser/pentaho-bigdatavm/content/evaluation /pentaho/evaluation
-sudo chown -R demouser:demouser /pentaho
-sudo ln -s /pentaho/evaluation /home/demouser/Desktop/Pentaho\ Evaluation
+#sudo mv /home/demouser/pentaho-bigdatavm/content/evaluation /pentaho/evaluation
+#sudo chown -R demouser:demouser /pentaho
+#sudo ln -s /pentaho/evaluation /home/demouser/Desktop/Pentaho\ Evaluation
 
 # Done
 
