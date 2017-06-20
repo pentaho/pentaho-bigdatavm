@@ -9,7 +9,7 @@
 #
 # In order to launch it, the VM calls:
 #
-# $ source <( curl -s https://raw.githubusercontent.com/pmalves/magicScript/master/magicScript.sh  )
+# $ source <( curl -s https://raw.githubusercontent.com/pentaho/pentaho-bigdatavm/master/magicScript.sh  )
 
 #
 # Author: Pedro Alves
