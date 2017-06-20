@@ -45,20 +45,20 @@ mkdir -p $TMPDIR
 echo -e '\n\nStep 1: Installing a few extra packages to the operating system...'
 
 # Install some stuff we need
-#BOB sudo apt-get update > $TMPDIR/step1.log 2>&1 && sudo apt-get install -y \
-#BOB	evince medit wget unzip git >> $TMPDIR/step1.log 2>&1 
+sudo apt-get update > $TMPDIR/step1.log 2>&1 && sudo apt-get install -y \
+	evince medit wget unzip git >> $TMPDIR/step1.log 2>&1 
 
 echo -e '\n\nStep 2: Downloading SQuirreL. This may take a few minutes...'
 
 # Download squirrel
 
-#BOB wget 'https://sourceforge.net/projects/squirrel-sql/files/1-stable/3.7.1-plainzip/squirrelsql-3.7.1-standard.zip/download' -O $TMPDIR/squirrelsql-3.7.1-standard.zip -o $TMPDIR/step2.log
+wget 'https://sourceforge.net/projects/squirrel-sql/files/1-stable/3.7.1-plainzip/squirrelsql-3.7.1-standard.zip/download' -O $TMPDIR/squirrelsql-3.7.1-standard.zip -o $TMPDIR/step2.log
 
 echo -e '\n\nStep 3: Installing and configuring SQuirreL...'
 
 # Install it
-#BOB sudo unzip -o $TMPDIR/squirrelsql-3.7.1-standard.zip -d /opt >> $TMPDIR/step3.log 2>&1
-#BOB sudo chmod +x /opt/squirrelsql-3.7.1-standard/*sh
+sudo unzip -o $TMPDIR/squirrelsql-3.7.1-standard.zip -d /opt >> $TMPDIR/step3.log 2>&1
+sudo chmod +x /opt/squirrelsql-3.7.1-standard/*sh
 
 cat << 'EOF' > /home/demouser/Desktop/SQuirreL.desktop
 [Desktop Entry]
