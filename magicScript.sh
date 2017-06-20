@@ -101,7 +101,9 @@ else
 	git clone -b $WORKBOOK_VERSION https://github.com/pentaho/pentaho-bigdatavm.git >> $TMPDIR/step4.log 2>&1 
 fi
 
-ln -s /home/demouser/pentaho-bigdatavm/content/evaluation /home/demouser/Desktop/Pentaho\ Evaluation
+mv /home/demouser/pentaho-bigdatavm/content/evaluation /pentaho/evaluation
+chown -R demouser:demouser /pentaho
+ln -s /pentaho/evaluation /home/demouser/Desktop/Pentaho\ Evaluation
 
 # Done
 
