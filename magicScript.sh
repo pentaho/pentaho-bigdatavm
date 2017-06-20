@@ -86,7 +86,7 @@ fi
 
 #move the eval contents to /pentaho/evaluation to match workbook instructions
 sudo mkdir /pentaho/evaluation
-sudo cp -R /home/demouser/pentaho-bigdatavm/content/evaluation /pentaho/evaluation
+sudo cp -R /home/demouser/pentaho-bigdatavm/content/evaluation/* /pentaho/evaluation/
 sudo chown -R demouser:demouser /pentaho
 sudo ln -s /pentaho/evaluation /home/demouser/Desktop/Pentaho\ Evaluation
 
