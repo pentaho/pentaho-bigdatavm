@@ -101,13 +101,11 @@ else
 	git clone -b $WORKBOOK_VERSION https://github.com/pentaho/pentaho-bigdatavm.git >> $TMPDIR/step4.log 2>&1 
 fi
 
-#sleep 10
-
 #sudo rm -f /home/demouser/Desktop/Pentaho\ Evaluation
 
-#sudo mv /home/demouser/pentaho-bigdatavm/content/evaluation /pentaho/evaluation
-#sudo chown -R demouser:demouser /pentaho
-#sudo ln -s /pentaho/evaluation /home/demouser/Desktop/Pentaho\ Evaluation
+sudo mv /home/demouser/pentaho-bigdatavm/content/evaluation /pentaho/evaluation
+sudo chown -R demouser:demouser /pentaho
+sudo ln -s /pentaho/evaluation /home/demouser/Desktop/Pentaho\ Evaluation
 
 # Done
 
