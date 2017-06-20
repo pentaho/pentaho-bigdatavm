@@ -101,7 +101,7 @@ else
 	git clone -b $WORKBOOK_VERSION https://github.com/pentaho/pentaho-bigdatavm.git >> $TMPDIR/step4.log 2>&1 
 fi
 
-sleep 10
+#sleep 10
 
 #sudo rm -f /home/demouser/Desktop/Pentaho\ Evaluation
 
