@@ -55,7 +55,7 @@ echo -e '\n\nStep 1: Installing a few extra packages to the operating system...'
 
 # Install some stuff we need
 #BOB sudo apt-get update > $TMPDIR/step1.log 2>&1 && sudo apt-get install -y \
-	evince medit wget unzip git >> $TMPDIR/step1.log 2>&1 
+#BOB	evince medit wget unzip git >> $TMPDIR/step1.log 2>&1 
 
 
 echo -e '\n\nStep 2: Downloading SQuirreL. This may take a few minutes...'
