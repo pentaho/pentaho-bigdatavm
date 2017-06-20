@@ -70,11 +70,9 @@ EOF
 
 sudo chmod +x /home/demouser/Desktop/SQuirreL.desktop
 
-echo -e '\n\nStep 4: Getting the workbook content the workbook content...'
+echo -e '\n\nStep 4: Getting the workbook content...'
 
-# Cloning or  updating the version rep
-
-# Do we have a temp dir? Wipe it out!
+# Cloning or  updating the version repo
 
 if [ -d $WORKBOOKDIR/$WORKBOOK_DIRNAME ]; then
 
@@ -86,8 +84,7 @@ else
 	git clone -b $WORKBOOK_VERSION https://github.com/pentaho/pentaho-bigdatavm.git >> $TMPDIR/step4.log 2>&1 
 fi
 
-#sudo rm -f /home/demouser/Desktop/Pentaho\ Evaluation
-
+#move the eval contents to /pentaho/evaluation to match workbook instructions
 sudo mv /home/demouser/pentaho-bigdatavm/content/evaluation /pentaho/evaluation
 sudo chown -R demouser:demouser /pentaho
 sudo ln -s /pentaho/evaluation /home/demouser/Desktop/Pentaho\ Evaluation
