@@ -544,13 +544,18 @@
   </connection>
   <order>
     <hop>
-      <from>Metadata Clean Up</from>
-      <to>Postgres Output</to>
+      <from>Join CDR to Geo Location Records</from>
+      <to>Metadata Clean Up</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Join CDR to Geo Location Records</from>
-      <to>Metadata Clean Up</to>
+      <from>Metadata Clean Up</from>
+      <to>String operations</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>String operations</from>
+      <to>Postgres Output</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -566,10 +571,8 @@
       <schema_name />
     </partitioning>
     <connection>Impala Simba</connection>
-    <sql>SELECT
- *
-FROM
-call_detail_combined
+    <sql>SELECT *
+FROM call_detail_combined
 </sql>
     <limit>0</limit>
     <lookup />
@@ -584,7 +587,7 @@ call_detail_combined
       </output>
     </remotesteps>
     <GUI>
-      <xloc>240</xloc>
+      <xloc>224</xloc>
       <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
@@ -606,7 +609,24 @@ call_detail_combined
         <name>key</name>
         <rename>key</rename>
         <type>None</type>
-        <length>8</length>
+        <length>15</length>
+        <precision>0</precision>
+        <conversion_mask />
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale />
+        <date_format_timezone />
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding />
+        <decimal_symbol />
+        <grouping_symbol />
+        <currency_symbol />
+        <storage_type />
+      </meta>
+      <meta>
+        <name>source_number</name>
+        <rename>source_number</rename>
+        <type>None</type>
+        <length>11</length>
         <precision>-2</precision>
         <conversion_mask />
         <date_format_lenient>false</date_format_lenient>
@@ -637,11 +657,45 @@ call_detail_combined
         <storage_type />
       </meta>
       <meta>
-        <name>source_number</name>
-        <rename>source_number</rename>
+        <name>call_month</name>
+        <rename>call_month</rename>
         <type>None</type>
-        <length>12</length>
-        <precision>-2</precision>
+        <length>15</length>
+        <precision>0</precision>
+        <conversion_mask />
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale />
+        <date_format_timezone />
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding />
+        <decimal_symbol />
+        <grouping_symbol />
+        <currency_symbol />
+        <storage_type />
+      </meta>
+      <meta>
+        <name>call_year</name>
+        <rename>call_year</rename>
+        <type>None</type>
+        <length>15</length>
+        <precision>0</precision>
+        <conversion_mask />
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale />
+        <date_format_timezone />
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding />
+        <decimal_symbol />
+        <grouping_symbol />
+        <currency_symbol />
+        <storage_type />
+      </meta>
+      <meta>
+        <name>day_of_week</name>
+        <rename>day_of_week</rename>
+        <type>None</type>
+        <length>15</length>
+        <precision>0</precision>
         <conversion_mask />
         <date_format_lenient>false</date_format_lenient>
         <date_format_locale />
@@ -657,8 +711,8 @@ call_detail_combined
         <name>area_code</name>
         <rename>area_code</rename>
         <type>None</type>
-        <length>3</length>
-        <precision>-2</precision>
+        <length>15</length>
+        <precision>0</precision>
         <conversion_mask />
         <date_format_lenient>false</date_format_lenient>
         <date_format_locale />
@@ -674,7 +728,7 @@ call_detail_combined
         <name>state</name>
         <rename>state</rename>
         <type>None</type>
-        <length>13</length>
+        <length>11</length>
         <precision>-2</precision>
         <conversion_mask />
         <date_format_lenient>false</date_format_lenient>
@@ -691,7 +745,7 @@ call_detail_combined
         <name>country</name>
         <rename>country</rename>
         <type>None</type>
-        <length>40</length>
+        <length>13</length>
         <precision>-2</precision>
         <conversion_mask />
         <date_format_lenient>false</date_format_lenient>
@@ -725,7 +779,7 @@ call_detail_combined
         <name>weekday</name>
         <rename>weekday</rename>
         <type>None</type>
-        <length>9</length>
+        <length>8</length>
         <precision>-2</precision>
         <conversion_mask />
         <date_format_lenient>false</date_format_lenient>
@@ -739,28 +793,11 @@ call_detail_combined
         <storage_type />
       </meta>
       <meta>
-        <name>direction</name>
-        <rename>direction</rename>
+        <name>num_calls</name>
+        <rename>num_calls</rename>
         <type>None</type>
-        <length>4</length>
-        <precision>-2</precision>
-        <conversion_mask />
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale />
-        <date_format_timezone />
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding />
-        <decimal_symbol />
-        <grouping_symbol />
-        <currency_symbol />
-        <storage_type />
-      </meta>
-      <meta>
-        <name>location_category</name>
-        <rename>location_category</rename>
-        <type>None</type>
-        <length>20</length>
-        <precision>-2</precision>
+        <length>15</length>
+        <precision>0</precision>
         <conversion_mask />
         <date_format_lenient>false</date_format_lenient>
         <date_format_locale />
@@ -781,7 +818,7 @@ call_detail_combined
       </output>
     </remotesteps>
     <GUI>
-      <xloc>576</xloc>
+      <xloc>480</xloc>
       <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
@@ -824,7 +861,111 @@ call_detail_combined
       </output>
     </remotesteps>
     <GUI>
-      <xloc>944</xloc>
+      <xloc>832</xloc>
+      <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>String operations</name>
+    <type>StringOperations</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>call_date</in_stream_name>
+        <out_stream_name />
+        <trim_type>none</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char />
+        <pad_len />
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>source_number</in_stream_name>
+        <out_stream_name />
+        <trim_type>none</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char />
+        <pad_len />
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>state</in_stream_name>
+        <out_stream_name />
+        <trim_type>right</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char />
+        <pad_len />
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>country</in_stream_name>
+        <out_stream_name />
+        <trim_type>none</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char />
+        <pad_len />
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>time_zone</in_stream_name>
+        <out_stream_name />
+        <trim_type>none</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char />
+        <pad_len />
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+      <field>
+        <in_stream_name>weekday</in_stream_name>
+        <out_stream_name />
+        <trim_type>none</trim_type>
+        <lower_upper>none</lower_upper>
+        <padding_type>none</padding_type>
+        <pad_char />
+        <pad_len />
+        <init_cap>no</init_cap>
+        <mask_xml>none</mask_xml>
+        <digits>none</digits>
+        <remove_special_characters>none</remove_special_characters>
+      </field>
+    </fields>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>672</xloc>
       <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
@@ -837,6 +978,25 @@ call_detail_combined
   <attributes>
     <group>
       <name>DataService</name>
+    </group>
+    <group>
+      <name>explorerState</name>
+      <attribute>
+        <key>Join CDR to Geo Location Records</key>
+        <value>{"tabs":{"list":[{"name":"Pivot Table","visualization":{"typeId":"pentaho-pivot-table-viz-impl_7.1.0.0-12/pivot","model":{"rows":{"attributes":["Geography_Country","Geography_State"]},"columns":{},"measures":{"attributes":["Measures_Num calls"]}},"visualModel":{"rows":{"attributes":["Geography_Country","Geography_State"]},"columns":{},"measures":{"attributes":["Measures_Num calls"]}},"hasFieldsSelected":true,"fieldsLabels":[{"id":"key","label":"Key"},{"id":"source_number","label":"Source number"},{"id":"call_date","label":"Call date"},{"id":"call_month","label":"Call month"},{"id":"call_year","label":"Call year"},{"id":"day_of_week","label":"Day of week"},{"id":"area_code","label":"Area code"},{"id":"state","label":"State"},{"id":"country","label":"Country"},{"id":"time_zone","label":"Time zone"},{"id":"weekday","label":"Weekday"},{"id":"num_calls","label":"Num calls"},{"id":"home_latitude","label":"Home latitude"},{"id":"home_longitude","label":"Home longitude"},{"id":"distance","label":"Distance"},{"id":"direction","label":"Direction"},{"id":"location_category","label":"Location category"},{"id":"new_lat","label":"New lat"},{"id":"new_long","label":"New long"},{"id":"Geography_Country","label":"Country"},{"id":"Measures_Num calls","label":"Num calls"},{"id":"Geography_State","label":"State"}]},"id":"J3YR17Y20.N9EYPLXYQBB","counter":"","label":"Pivot Table","isValid":true,"modeName":"MODEL","filters":{"_":"or","o":[{"_":"and","o":[{"_":"=","p":"Geography_Country","v":{"_":"string","v":"[Geography].[UNITED STATES]","f":"UNITED STATES"}}]}]}}]},"selectedTabId":"J3YR17Y20.N9EYPLXYQBB"}</value>
+      </attribute>
+      <attribute>
+        <key>Postgres Output</key>
+        <value>{"tabs":{"list":[{"name":"Geo Map","visualization":{"typeId":"pentaho/visual/models/geoMap","model":{"geography":{"attributes":["Geography_State"]},"color":{"attributes":["Measures_Num calls"]},"size":{},"columns":{}},"visualModel":{"geography":{"attributes":["Geography_State"]},"color":{"attributes":["Measures_Num calls"]},"size":{},"columns":{}},"hasFieldsSelected":true,"fieldsLabels":[{"id":"key","label":"Key"},{"id":"source_number","label":"Source number"},{"id":"call_date","label":"Call date"},{"id":"call_month","label":"Call month"},{"id":"call_year","label":"Call year"},{"id":"day_of_week","label":"Day of week"},{"id":"area_code","label":"Area code"},{"id":"state","label":"State"},{"id":"country","label":"Country"},{"id":"time_zone","label":"Time zone"},{"id":"weekday","label":"Weekday"},{"id":"num_calls","label":"Num calls"},{"id":"home_latitude","label":"Home latitude"},{"id":"home_longitude","label":"Home longitude"},{"id":"distance","label":"Distance"},{"id":"direction","label":"Direction"},{"id":"location_category","label":"Location category"},{"id":"new_lat","label":"New lat"},{"id":"new_long","label":"New long"},{"id":"Geography_Country","label":"Country"},{"id":"Measures_Num calls","label":"Num calls"},{"id":"Geography_State","label":"State"}]},"id":"J4A31JFA0.TGAJ0DXGNT","counter":"","label":"Geo Map","isValid":true,"modeName":"MODEL","filters":{"_":"or","o":[{"_":"and","o":[{"_":"=","p":"Geography_Country","v":{"_":"string","v":"[Geography].[UNITED STATES]","f":"UNITED STATES"}}]}]}}]},"selectedTabId":"J4A31JFA0.TGAJ0DXGNT"}</value>
+      </attribute>
+      <attribute>
+        <key>Metadata Clean Up</key>
+        <value>{"tabs":{"list":[{"name":"Geo Map","visualization":{"typeId":"pentaho/visual/models/geoMap","model":{"geography":{"attributes":["Geography_Country"]},"color":{"attributes":["Measures_Num calls"]},"size":{},"columns":{}},"visualModel":{"geography":{"attributes":["Geography_Country"]},"color":{"attributes":["Measures_Num calls"]},"size":{},"columns":{}},"hasFieldsSelected":true,"fieldsLabels":[{"id":"key","label":"Key"},{"id":"source_number","label":"Source number"},{"id":"call_date","label":"Call date"},{"id":"call_month","label":"Call month"},{"id":"call_year","label":"Call year"},{"id":"day_of_week","label":"Day of week"},{"id":"area_code","label":"Area code"},{"id":"state","label":"State"},{"id":"country","label":"Country"},{"id":"time_zone","label":"Time zone"},{"id":"weekday","label":"Weekday"},{"id":"num_calls","label":"Num calls"},{"id":"home_latitude","label":"Home latitude"},{"id":"home_longitude","label":"Home longitude"},{"id":"distance","label":"Distance"},{"id":"direction","label":"Direction"},{"id":"location_category","label":"Location category"},{"id":"new_lat","label":"New lat"},{"id":"new_long","label":"New long"},{"id":"Geography_Country","label":"Country"},{"id":"Measures_Num calls","label":"Num calls"},{"id":"Geography_State","label":"State"}]},"id":"J48WH0X00.0DFM2BMVUP1R","counter":1,"label":"Geo Map 1","isValid":true,"modeName":"MODEL","filters":{"_":"or","o":[{"_":"and","o":[]}]}}]},"selectedTabId":"J48WH0X00.0DFM2BMVUP1R"}</value>
+      </attribute>
+      <attribute>
+        <key>String operations</key>
+        <value>{"tabs":{"list":[{"name":"Geo Map","visualization":{"typeId":"pentaho/visual/models/geoMap","model":{"geography":{"attributes":["Geography_State"]},"color":{"attributes":["Measures_Num calls"]},"size":{},"columns":{}},"visualModel":{"geography":{"attributes":["Geography_State"]},"color":{"attributes":["Measures_Num calls"]},"size":{},"columns":{}},"hasFieldsSelected":true,"fieldsLabels":[{"id":"key","label":"Key"},{"id":"call_date","label":"Call date"},{"id":"source_number","label":"Source number"},{"id":"call_month","label":"Call month"},{"id":"call_year","label":"Call year"},{"id":"day_of_week","label":"Day of week"},{"id":"area_code","label":"Area code"},{"id":"state","label":"State"},{"id":"country","label":"Country"},{"id":"time_zone","label":"Time zone"},{"id":"weekday","label":"Weekday"},{"id":"num_calls","label":"Num calls"},{"id":"Measures_Num calls","label":"Num calls"},{"id":"Geography_Country","label":"Country"},{"id":"Geography_State","label":"State"}]},"id":"J4AAJFU90.O0L9HZSWIFC","counter":"","label":"Geo Map","isValid":true,"modeName":"MODEL","filters":{"_":"or","o":[{"_":"and","o":[{"_":"=","p":"Geography_Country","v":{"_":"string","v":"[Geography].[UNITED STATES]","f":"UNITED STATES"}}]}]}}]},"selectedTabId":"J4AAJFU90.O0L9HZSWIFC"}</value>
+      </attribute>
     </group>
   </attributes>
 </transformation>

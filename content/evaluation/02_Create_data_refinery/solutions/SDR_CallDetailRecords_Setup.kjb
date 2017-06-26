@@ -498,17 +498,17 @@
       <sql>CREATE TABLE default.call_detail_records
 (
   key INT
-, call_date STRING
-, source_number STRING
+, call_date VARCHAR(26)
+, source_number VARCHAR(11)
 , call_month INT
 , call_year INT
 , day_of_week INT
 , area_code INT
-, primary_city STRING
-, state STRING
-, country STRING
-, time_zone STRING
-, weekday STRING
+, primary_city VARCHAR(19)
+, state VARCHAR(11)
+, country VARCHAR(13)
+, time_zone VARCHAR(8)
+, weekday VARCHAR(8)
 , num_calls INT)
 row format delimited
 fields terminated by '|'

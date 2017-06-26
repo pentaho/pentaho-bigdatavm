@@ -502,13 +502,13 @@
       <sql>
 CREATE TABLE call_detail_geo
 (
-  calldate STRING, 
-  source_number STRING, 
+  calldate VARCHAR(26), 
+  source_number VARCHAR(11), 
   home_latitude DOUBLE, 
   home_longitude DOUBLE, 
   distance DOUBLE, 
-  direction STRING, 
-  location_category STRING, 
+  direction VARCHAR(4), 
+  location_category VARCHAR(20), 
   new_lat DOUBLE, 
   new_long DOUBLE
 )
@@ -547,22 +547,22 @@ STORED AS TEXTFILE;</sql>
 CREATE TABLE call_detail_combined
 (
   key INT
-, source_number STRING
-, call_date STRING
+, source_number VARCHAR(11)
+, call_date VARCHAR(26)
 , call_month INT
 , call_year INT
 , day_of_week INT
 , area_code INT
-, state STRING
-, country STRING
-, time_zone STRING
-, weekday STRING
+, state VARCHAR(11)
+, country VARCHAR(13)
+, time_zone VARCHAR(8)
+, weekday VARCHAR(8)
 , num_calls INT
 , home_latitude DOUBLE
 , home_longitude DOUBLE
 , distance DOUBLE
-, direction STRING
-, location_category STRING
+, direction VARCHAR(4)
+, location_category VARCHAR(20)
 , new_lat DOUBLE
 , new_long DOUBLE
 );
