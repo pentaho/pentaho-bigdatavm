@@ -7,61 +7,13 @@
   <job_status>0</job_status>
   <directory>/</directory>
   <created_user>-</created_user>
-  <created_date>2014/09/05 07:21:58.623</created_date>
+  <created_date>2017/07/12 01:21:18.861</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2014/09/05 07:21:58.623</modified_date>
+  <modified_date>2017/07/12 01:21:18.861</modified_date>
   <parameters>
-    <parameter>
-      <name>authentication_password</name>
-      <default_value />
-      <description>$eCret (or hardcode this in steps)</description>
-    </parameter>
-    <parameter>
-      <name>authentication_user</name>
-      <default_value />
-      <description>sperson@pentaho.com</description>
-    </parameter>
-    <parameter>
-      <name>destination_address</name>
-      <default_value />
-      <description>suser@company.net</description>
-    </parameter>
-    <parameter>
-      <name>reply_to</name>
-      <default_value />
-      <description>sperson@pentaho.com</description>
-    </parameter>
-    <parameter>
-      <name>senders_address</name>
-      <default_value />
-      <description>sperson@pentaho.com</description>
-    </parameter>
-    <parameter>
-      <name>smtp_port</name>
-      <default_value />
-      <description>587</description>
-    </parameter>
-    <parameter>
-      <name>smtp_server</name>
-      <default_value />
-      <description>smtp.office365.com</description>
-    </parameter>
-  </parameters>
+    </parameters>
   <slaveservers>
-    <slaveserver>
-      <name>local_cart</name>
-      <hostname>localhost</hostname>
-      <port>9080</port>
-      <webAppName>pentaho-di</webAppName>
-      <username>admin</username>
-      <password>Encrypted 2be98afc86aa7f2e4bb18bd63c99dbdde</password>
-      <proxy_hostname />
-      <proxy_port />
-      <non_proxy_hosts />
-      <master>N</master>
-      <sslMode>N</sslMode>
-    </slaveserver>
-  </slaveservers>
+    </slaveservers>
   <job-log-table>
     <connection />
     <schema />
@@ -419,14 +371,24 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>32</xloc>
-      <yloc>144</yloc>
+      <xloc>64</xloc>
+      <yloc>128</yloc>
+    </entry>
+    <entry>
+      <name>Success</name>
+      <description />
+      <type>SUCCESS</type>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>640</xloc>
+      <yloc>128</yloc>
     </entry>
     <entry>
       <name>Hadoop Copy Files</name>
       <description />
       <type>HadoopCopyFilesPlugin</type>
-      <copy_empty_folders>Y</copy_empty_folders>
+      <copy_empty_folders>N</copy_empty_folders>
       <arg_from_previous>N</arg_from_previous>
       <overwrite_files>Y</overwrite_files>
       <include_subfolders>N</include_subfolders>
@@ -436,23 +398,30 @@
       <create_destination_folder>Y</create_destination_folder>
       <fields>
         <field>
-          <source_filefolder>file:///pentaho/shared_content/WorkshopTraining/01_Fill_the_data_lake/data/areacodes.csv</source_filefolder>
+          <source_filefolder>file:///home/demouser/pentaho-bigdatavm/content/evaluation/01_Fill_the_data_lake/data/callrecords_all.csv</source_filefolder>
           <source_configuration_name>LOCAL-SOURCE-FILE-0</source_configuration_name>
-          <destination_filefolder>hdfs://cloudera:cloudera@quickstart.cloudera:8020/BDO/callrecords/reference</destination_filefolder>
+          <destination_filefolder>hdfs://demouser@pentahobdvm.localdomain:8020/BDO/callrecords/input</destination_filefolder>
           <destination_configuration_name>CDH</destination_configuration_name>
           <wildcard />
         </field>
         <field>
-          <source_filefolder>file:///pentaho/shared_content/WorkshopTraining/01_Fill_the_data_lake/data/callrecords_all.csv</source_filefolder>
+          <source_filefolder>file:///home/demouser/pentaho-bigdatavm/content/evaluation/01_Fill_the_data_lake/data/callrecords_10years.csv</source_filefolder>
           <source_configuration_name>LOCAL-SOURCE-FILE-1</source_configuration_name>
-          <destination_filefolder>hdfs://cloudera:cloudera@quickstart.cloudera:8020/BDO/callrecords/input</destination_filefolder>
+          <destination_filefolder>hdfs://demouser@pentahobdvm.localdomain:8020/BDO/callrecords/input</destination_filefolder>
           <destination_configuration_name>CDH</destination_configuration_name>
           <wildcard />
         </field>
         <field>
-          <source_filefolder>file:///pentaho/shared_content/WorkshopTraining/01_Fill_the_data_lake/data/http_gateway_request.log.0</source_filefolder>
+          <source_filefolder>file:///home/demouser/pentaho-bigdatavm/content/evaluation/01_Fill_the_data_lake/data/areacodes.csv</source_filefolder>
           <source_configuration_name>LOCAL-SOURCE-FILE-2</source_configuration_name>
-          <destination_filefolder>hdfs://cloudera:cloudera@quickstart.cloudera:8020/BDO/HCP/logs</destination_filefolder>
+          <destination_filefolder>hdfs://demouser@pentahobdvm.localdomain:8020/BDO/callrecords/reference</destination_filefolder>
+          <destination_configuration_name>CDH</destination_configuration_name>
+          <wildcard />
+        </field>
+        <field>
+          <source_filefolder>file:///home/demouser/pentaho-bigdatavm/content/evaluation/01_Fill_the_data_lake/data/http_gateway_request.log.0</source_filefolder>
+          <source_configuration_name>LOCAL-SOURCE-FILE-3</source_configuration_name>
+          <destination_filefolder>hdfs://demouser@pentahobdvm.localdomain:8020/BDO/HCP/logs</destination_filefolder>
           <destination_configuration_name>CDH</destination_configuration_name>
           <wildcard />
         </field>
@@ -460,21 +429,11 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>288</xloc>
-      <yloc>144</yloc>
+      <xloc>480</xloc>
+      <yloc>128</yloc>
     </entry>
     <entry>
-      <name>Success</name>
-      <description />
-      <type>SUCCESS</type>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>416</xloc>
-      <yloc>144</yloc>
-    </entry>
-    <entry>
-      <name>Transformation</name>
+      <name>Ingest Tower Log Records to Hadoop</name>
       <description />
       <type>TRANS</type>
       <specification_method>filename</specification_method>
@@ -506,8 +465,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>160</xloc>
-      <yloc>144</yloc>
+      <xloc>256</xloc>
+      <yloc>128</yloc>
     </entry>
   </entries>
   <hops>
@@ -522,7 +481,7 @@
     </hop>
     <hop>
       <from>START</from>
-      <to>Transformation</to>
+      <to>Ingest Tower Log Records to Hadoop</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -530,7 +489,7 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>Transformation</from>
+      <from>Ingest Tower Log Records to Hadoop</from>
       <to>Hadoop Copy Files</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -540,29 +499,6 @@
     </hop>
   </hops>
   <notepads>
-    <notepad>
-      <note>(1) Ingest Reference Data 
-(CDR,Area Code and HCP) 
-into Hadoop</note>
-      <xloc>80</xloc>
-      <yloc>48</yloc>
-      <width>217</width>
-      <heigth>67</heigth>
-      <fontname>Arial</fontname>
-      <fontsize>10</fontsize>
-      <fontbold>N</fontbold>
-      <fontitalic>N</fontitalic>
-      <fontcolorred>0</fontcolorred>
-      <fontcolorgreen>0</fontcolorgreen>
-      <fontcolorblue>0</fontcolorblue>
-      <backgroundcolorred>255</backgroundcolorred>
-      <backgroundcolorgreen>205</backgroundcolorgreen>
-      <backgroundcolorblue>112</backgroundcolorblue>
-      <bordercolorred>100</bordercolorred>
-      <bordercolorgreen>100</bordercolorgreen>
-      <bordercolorblue>100</bordercolorblue>
-      <drawshadow>Y</drawshadow>
-    </notepad>
   </notepads>
   <attributes>
     <group>
