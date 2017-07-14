@@ -623,7 +623,7 @@
     <accept_field />
     <accept_stepname />
     <file>
-      <name>/home/demouser/pentaho-bigdatavm/content/evaluation/01_Fill_the_data_lake/solutions/Tower_logs_metadata.xlsx</name>
+      <name>/home/demouser/pentaho-bigdatavm/content/evaluation/01_Fill_the_data_lake/data/Tower_logs_metadata.xlsx</name>
       <filemask />
       <exclude_filemask />
       <file_required>N</file_required>
