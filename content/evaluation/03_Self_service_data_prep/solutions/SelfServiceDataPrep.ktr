@@ -6,6 +6,7 @@
     <extended_description />
     <trans_version />
     <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
     </parameters>
@@ -770,7 +771,7 @@ drill down on report data</note>
       <method>none</method>
       <schema_name />
     </partitioning>
-    <filename>/home/demouser/pentaho-bigdatavm/content/evaluation/03_Self_service_data_prep/data/call_detail_records.csv</filename>
+    <filename>/pentaho/evaluation/03_Self_service_data_prep/data/call_detail_records.csv</filename>
     <filename_field />
     <rownum_field />
     <include_filename>N</include_filename>
@@ -1100,7 +1101,7 @@ drill down on report data</note>
       <method>none</method>
       <schema_name />
     </partitioning>
-    <filename>/home/demouser/pentaho-bigdatavm/content/evaluation/03_Self_service_data_prep/data/call_detail_geolocation_output.csv</filename>
+    <filename>/pentaho/evaluation/03_Self_service_data_prep/data/call_detail_geolocation_output.csv</filename>
     <filename_field />
     <rownum_field />
     <include_filename>N</include_filename>
