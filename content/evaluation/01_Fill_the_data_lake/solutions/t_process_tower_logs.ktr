@@ -468,7 +468,7 @@
     <dynamic_include_subfolders>N</dynamic_include_subfolders>
     <limit>0</limit>
     <file>
-      <name>/home/demouser/pentaho-bigdatavm/content/evaluation/01_Fill_the_data_lake/data/call_logs/</name>
+      <name>/pentaho/evaluation/01_Fill_the_data_lake/data/call_logs/</name>
       <filemask>.*csv</filemask>
       <exclude_filemask />
       <file_required>N</file_required>

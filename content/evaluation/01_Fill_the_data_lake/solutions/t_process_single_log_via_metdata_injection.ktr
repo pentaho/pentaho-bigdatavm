@@ -471,7 +471,7 @@
     <specification_method>filename</specification_method>
     <trans_object_id />
     <trans_name />
-    <filename>${Internal.Entry.Current.Directory}/t_ingest_to_hdfs_template.ktr</filename>
+    <filename>file:///pentaho/evaluation/01_Fill_the_data_lake/solutions/t_ingest_to_hdfs_template.ktr</filename>
     <directory_path />
     <source_step />
     <source_output_fields>    </source_output_fields>
@@ -623,7 +623,7 @@
     <accept_field />
     <accept_stepname />
     <file>
-      <name>/home/demouser/pentaho-bigdatavm/content/evaluation/01_Fill_the_data_lake/data/Tower_logs_metadata.xlsx</name>
+      <name>/pentaho/evaluation/01_Fill_the_data_lake/data/Tower_logs_metadata.xlsx</name>
       <filemask />
       <exclude_filemask />
       <file_required>N</file_required>
