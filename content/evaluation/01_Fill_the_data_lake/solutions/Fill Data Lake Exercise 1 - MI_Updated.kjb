@@ -398,28 +398,28 @@
       <create_destination_folder>Y</create_destination_folder>
       <fields>
         <field>
-          <source_filefolder>file:///home/demouser/pentaho-bigdatavm/content/evaluation/01_Fill_the_data_lake/data/callrecords_all.csv</source_filefolder>
+          <source_filefolder>file:///pentaho/evaluation/01_Fill_the_data_lake/data/callrecords_all.csv</source_filefolder>
           <source_configuration_name>LOCAL-SOURCE-FILE-0</source_configuration_name>
           <destination_filefolder>hdfs://demouser@pentahobdvm.localdomain:8020/BDO/callrecords/input</destination_filefolder>
           <destination_configuration_name>CDH</destination_configuration_name>
           <wildcard />
         </field>
         <field>
-          <source_filefolder>file:///home/demouser/pentaho-bigdatavm/content/evaluation/01_Fill_the_data_lake/data/callrecords_10years.csv</source_filefolder>
+          <source_filefolder>file:///pentaho/evaluation/01_Fill_the_data_lake/data/callrecords_10years.csv</source_filefolder>
           <source_configuration_name>LOCAL-SOURCE-FILE-1</source_configuration_name>
           <destination_filefolder>hdfs://demouser@pentahobdvm.localdomain:8020/BDO/callrecords/input</destination_filefolder>
           <destination_configuration_name>CDH</destination_configuration_name>
           <wildcard />
         </field>
         <field>
-          <source_filefolder>file:///home/demouser/pentaho-bigdatavm/content/evaluation/01_Fill_the_data_lake/data/areacodes.csv</source_filefolder>
+          <source_filefolder>file:///pentaho/evaluation/01_Fill_the_data_lake/data/areacodes.csv</source_filefolder>
           <source_configuration_name>LOCAL-SOURCE-FILE-2</source_configuration_name>
           <destination_filefolder>hdfs://demouser@pentahobdvm.localdomain:8020/BDO/callrecords/reference</destination_filefolder>
           <destination_configuration_name>CDH</destination_configuration_name>
           <wildcard />
         </field>
         <field>
-          <source_filefolder>file:///home/demouser/pentaho-bigdatavm/content/evaluation/01_Fill_the_data_lake/data/http_gateway_request.log.0</source_filefolder>
+          <source_filefolder>file:///pentaho/evaluation/01_Fill_the_data_lake/data/http_gateway_request.log.0</source_filefolder>
           <source_configuration_name>LOCAL-SOURCE-FILE-3</source_configuration_name>
           <destination_filefolder>hdfs://demouser@pentahobdvm.localdomain:8020/BDO/HCP/logs</destination_filefolder>
           <destination_configuration_name>CDH</destination_configuration_name>
