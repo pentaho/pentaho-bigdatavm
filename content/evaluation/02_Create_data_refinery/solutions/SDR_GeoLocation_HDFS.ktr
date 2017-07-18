@@ -604,7 +604,7 @@
       </child>
       <child>
         <id>lastModifiedDate</id>
-        <value>1497463267366</value>
+        <value>1497470897697</value>
         <type>String</type>
       </child>
       <child>
@@ -692,7 +692,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <filename>/home/demouser/pentaho-bigdatavm/content/evaluation/02_Create_data_refinery/data/call_detail_geolocation_output.txt</filename>
+    <filename>/pentaho/evaluation/02_Create_data_refinery/data/call_detail_geolocation_output.txt</filename>
     <filename_field />
     <rownum_field />
     <include_filename>N</include_filename>
@@ -708,11 +708,11 @@
     <fields>
       <field>
         <name>date</name>
-        <type>Date</type>
-        <format>yyyy/MM/dd HH:mm:ss.SSS</format>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -721,54 +721,54 @@
         <name>source_number</name>
         <type>String</type>
         <format />
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>11</length>
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>home_latitude</name>
-        <type>Number</type>
-        <format>#.#</format>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>10</length>
-        <precision>7</precision>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>home_longitude</name>
-        <type>Number</type>
-        <format>#.#</format>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>12</length>
-        <precision>7</precision>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>distance</name>
-        <type>Number</type>
-        <format>#.#</format>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>6</length>
-        <precision>2</precision>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>direction</name>
         <type>String</type>
         <format />
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>3</length>
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -776,33 +776,33 @@
         <name>location_category</name>
         <type>String</type>
         <format />
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>19</length>
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>new_lat</name>
-        <type>Number</type>
-        <format>#.#</format>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>10</length>
-        <precision>7</precision>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
         <name>new_long</name>
-        <type>Number</type>
-        <format>#.#</format>
-        <currency>$</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>12</length>
-        <precision>7</precision>
+        <type>String</type>
+        <format />
+        <currency />
+        <decimal />
+        <group />
+        <length>-1</length>
+        <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
     </fields>
