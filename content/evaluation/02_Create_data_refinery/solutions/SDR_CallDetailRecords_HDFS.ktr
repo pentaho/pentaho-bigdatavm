@@ -454,7 +454,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <filename>/home/demouser/pentaho-bigdatavm/content/evaluation/02_Create_data_refinery/data/call_detail_records.csv</filename>
+    <filename>/pentaho/evaluation/02_Create_data_refinery/data/call_detail_records.csv</filename>
     <filename_field />
     <rownum_field />
     <include_filename>N</include_filename>
@@ -834,7 +834,7 @@
       </child>
       <child>
         <id>lastModifiedDate</id>
-        <value>1497463267366</value>
+        <value>1497470897697</value>
         <type>String</type>
       </child>
       <child>

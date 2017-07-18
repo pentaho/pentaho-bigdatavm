@@ -437,9 +437,9 @@
   <notepads>
   </notepads>
   <connection>
-    <name>Impala Simba</name>
+    <name>Impala Apache</name>
     <server>localhost</server>
-    <type>IMPALASIMBA</type>
+    <type>IMPALA</type>
     <access>Native</access>
     <database>default</database>
     <port>21050</port>
@@ -449,10 +449,6 @@
     <data_tablespace />
     <index_tablespace />
     <attributes>
-      <attribute>
-        <code>EXTRA_OPTION_IMPALASIMBA.SocketTimeout</code>
-        <attribute>10</attribute>
-      </attribute>
       <attribute>
         <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
         <attribute>N</attribute>
@@ -570,7 +566,7 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <connection>Impala Simba</connection>
+    <connection>Impala Apache</connection>
     <sql>SELECT *
 FROM call_detail_combined
 </sql>
