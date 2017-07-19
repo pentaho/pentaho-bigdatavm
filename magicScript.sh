@@ -34,10 +34,10 @@ BASEDIR=$(dirname $0)
 cd $BASEDIR
 
 TMPDIR=/home/demouser/magicScriptTmp/
-WORKBOOKDIR=/home/demouser
+WORKBOOKDIR=/pentaho
 
 WORKBOOK_GIT=https://github.com/pentaho/pentaho-bigdatavm.git
-WORKBOOK_DIRNAME=pentaho-bigdatavm
+WORKBOOK_DIRNAME=evaluation
 WORKBOOK_VERSION=master
 
 # Do we have a temp dir? Wipe it out!
@@ -91,8 +91,8 @@ else
 fi
 
 #move the eval contents to /pentaho/evaluation to match workbook instructions
-sudo mkdir /pentaho/evaluation
-sudo cp -R /home/demouser/pentaho-bigdatavm/content/evaluation/* /pentaho/evaluation/
+#sudo mkdir /pentaho/evaluation
+#sudo cp -R /home/demouser/pentaho-bigdatavm/content/evaluation/* /pentaho/evaluation/
 sudo chown -R demouser:demouser /pentaho
 sudo ln -s /pentaho/evaluation /home/demouser/Desktop/Pentaho\ Evaluation
 
