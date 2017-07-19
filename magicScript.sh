@@ -47,6 +47,8 @@ fi
 
 # and start!
 mkdir -p $TMPDIR
+sudo mkdir -p $WORKBOOKDIR
+sudo chown demouser:demouser $WORKBOOKDIR
 
 echo -e '\n\nStep 1: Installing a few extra packages to the operating system...'
 
@@ -80,6 +82,7 @@ echo -e '\n\nStep 4: Getting the workbook content...'
 
 # Cloning or  updating the version repo
 
+
 if [ -d $WORKBOOKDIR/$WORKBOOK_DIRNAME ]; then
 
 	cd $WORKBOOKDIR/$WORKBOOK_DIRNAME 
@@ -90,8 +93,6 @@ else
 	git clone -b $WORKBOOK_VERSION https://github.com/pentaho/pentaho-bigdatavm.git >> $TMPDIR/step4.log 2>&1 
 fi
 
-#move the eval contents to /pentaho/evaluation to match workbook instructions
-sudo mkdir /pentaho/evaluation
 #sudo cp -R /home/demouser/pentaho-bigdatavm/content/evaluation/* /pentaho/evaluation/
 sudo mv $WORKBOOKDIR/pentaho-bigdatavm/content/evaluation $WORKBOOKDIR
 sudo mv $WORKBOOKDIR/pentaho-bigdatavm/content/workshop $WORKBOOKDIR
