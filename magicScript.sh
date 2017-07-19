@@ -99,7 +99,7 @@ sudo mv $WORKBOOKDIR/pentaho-bigdatavm/content/workshop $WORKBOOKDIR
 sudo rm -rf /pentaho/pentaho-bigdatavm
 sudo chown -R demouser:demouser /pentaho
 sudo rm -f /home/demouser/Desktop/Pentaho\ Evaluation
-sudo ln -s /pentaho/evaluation /home/demouser/Desktop/Pentaho\ Evaluation
+#sudo ln -s /pentaho/evaluation /home/demouser/Desktop/Pentaho\ Evaluation
 
 # Done
 
