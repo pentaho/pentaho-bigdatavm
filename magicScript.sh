@@ -94,6 +94,7 @@ else
 fi
 
 #sudo cp -R /home/demouser/pentaho-bigdatavm/content/evaluation/* /pentaho/evaluation/
+sudo rm -f /home/demouser/Desktop/Pentaho\ Evaluation
 sudo mv $WORKBOOKDIR/pentaho-bigdatavm/content/evaluation $WORKBOOKDIR
 sudo mkdir -p /home/demouser/pentaho-bigdatavm/content
 sudo mv $WORKBOOKDIR/pentaho-bigdatavm/content/workshop /home/demouser/pentaho-bigdatavm/content/
@@ -101,7 +102,7 @@ sudo rm -rf /pentaho/pentaho-bigdatavm
 sudo chown -R demouser:demouser /pentaho
 sudo chown -R demouser:demouser/home/demouser/pentaho-bigdatavm
 sudo rm -f /home/demouser/Desktop/Pentaho\ Evaluation
-#sudo ln -s /pentaho/evaluation /home/demouser/Desktop/Pentaho\ Evaluation
+sudo ln -s /pentaho/evaluation /home/demouser/Desktop/Pentaho\ Evaluation
 
 # Done
 
